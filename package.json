@@ -1,0 +1,55 @@
+{
+  "name": "angular2-compilation",
+  "version": "1.0.0",
+  "description": "Example of ahead-of-time compilation for Angular2",
+  "main": "app.bundle.js",
+  "scripts": {
+    "build": "webpack --p",
+    "start": "webpack-dev-server --quiet",
+    "typings": "typings",
+    "postinstall": "typings install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mike-plummer/angular2-compilation.git"
+  },
+  "author": "Mike Plummer",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mike-plummer/angular2-compilation"
+  },
+  "homepage": "https://github.com/mike-plummer/angular2-compilation#readme",
+  "dependencies": {
+    "@angular/common": "2.3.0",
+    "@angular/compiler": "2.3.0",
+    "@angular/core": "2.3.0",
+    "@angular/forms": "2.3.0",
+    "@angular/platform-browser": "2.3.0",
+    "@angular/platform-browser-dynamic": "2.3.0",
+    "@angular/router": "3.3.0",
+    "core-js": "^2.4.1",
+    "furtive": "^2.2.4",
+    "reflect-metadata": "^0.1.8",
+    "rxjs": "5.0.0-rc.4",
+    "zone.js": "^0.7.2"
+  },
+  "devDependencies": {
+    "awesome-typescript-loader": "3.0.0-beta.11",
+    "css-loader": "^0.26.1",
+    "file-loader": "^0.9.0",
+    "html-loader": "^0.4.4",
+    "html-webpack-plugin": "2.24.1",
+    "node-sass": "^3.4.2",
+    "pug": "^2.0.0-beta6",
+    "pug-html-loader": "1.0.9",
+    "raw-loader": "0.5.1",
+    "sass-loader": "^4.0.2",
+    "style-loader": "^0.13.1",
+    "typescript": "2.1.4",
+    "typings": "2.0.0",
+    "url-loader": "^0.5.7",
+    "webpack": "2.1.0-beta.27",
+    "webpack-dashboard": "0.2.0",
+    "webpack-dev-server": "2.1.0-beta.12"
+  }
+}

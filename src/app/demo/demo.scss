@@ -1,0 +1,27 @@
+.demo {
+  display: flex;
+  flex-direction: column;
+
+  .header {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+
+    img {
+      margin: 10px;
+      height: 80px;
+    }
+  }
+
+  hr {
+    width: 100%;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+
+    padding-left: 20px;
+  }
+}
