@@ -2,6 +2,6 @@ import 'zone.js/dist/zone';
 import 'reflect-metadata';
 
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
-import { DemoModule } from './app/demo.module';
+import { AppModule } from './app/app.module';
 
-platformBrowserDynamic().bootstrapModule(DemoModule);
+platformBrowserDynamic().bootstrapModule(AppModule);

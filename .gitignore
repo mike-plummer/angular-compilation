@@ -2,5 +2,7 @@
 node_modules/
 *.iml
 .idea/
-typings/
-npm-debug.log
+**/*.map
+/aot/
+/dist/
+/typings/

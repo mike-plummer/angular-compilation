@@ -28,20 +28,14 @@ module.exports = {
     rules: [
       {
         test: /\.ts$/,
-        loader: 'awesome-typescript-loader'
+        loaders: [
+          'awesome-typescript-loader',
+          'angular2-template-loader'
+          ]
       }, {
         test: /\.html$/,
         exclude: ['./src/index.html'],
-        loader: 'html-loader',
-        options: {
-          minimize: true,
-          removeAttributeQuotes: false,
-          caseSensitive: true,
-          // Teach html-minifier about Angular 2 syntax
-          customAttrSurround: [ [/#/, /(?:)/], [/\*/, /(?:)/], [/\[?\(?/, /(?:)/] ],
-          customAttrAssign: [ /\)?\]?=/ ],
-          attrs: ['img:src', 'link:href']
-        }
+        loader: 'raw-loader'
       }, {
         test: /\.(pug|jade)$/,
         exclude: /node_modules/,

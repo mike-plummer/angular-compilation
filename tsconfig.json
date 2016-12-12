@@ -1,22 +1,23 @@
 {
   "compilerOptions": {
-    "target": "ES5",
+    "target": "es5",
     "module": "commonjs",
     "moduleResolution": "node",
     "sourceMap": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "removeComments": false,
-    "noImplicitAny": false
+    "noImplicitAny": false,
+    "outDir": "dist/js"
   },
   "exclude": [
     "node_modules",
-    "typings/browser",
-    "typings/browser.d.ts"
+    "src/app-aot.ts"
   ],
-  "filesGlob": [
-    "src/app/**/*.ts",
-    "typings/main/**/*.d.ts"
+  "files": [
+    "src/app/app.module.ts",
+    "src/app.ts",
+    "typings/index.d.ts"
   ],
   "compileOnSave": false,
   "buildOnSave": false
