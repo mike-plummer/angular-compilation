@@ -1,0 +1,21 @@
+.demo {
+  display: flex;
+  flex-direction: column;
+}
+
+hr {
+  width: 100%;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  padding-left: 20px;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+}

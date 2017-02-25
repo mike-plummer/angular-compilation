@@ -7,7 +7,7 @@ var dashboard = new Dashboard();
 
 module.exports = {
   entry: {
-    app: './src/app.ts'
+    app: './dist/app.js'
   },
   output: {
     filename: '[name].bundle.js',
@@ -16,39 +16,15 @@ module.exports = {
   },
   // devtool: 'source-map',   // Uncomment to enable SourceMaps
   resolve: {
-    extensions: ['.ts', '.js']
+    extensions: ['.js']
   },
   module: {
     rules: [
-      {
-        test: /\.ts$/,
-        loaders: [
-          'awesome-typescript-loader',
-          'angular2-template-loader'
-          ]
-      }, {
-        test: /\.html$/,
-        exclude: ['./src/index.html'],
-        loader: 'html-loader'
-      }, {
-        test: /\.(pug|jade)$/,
-        exclude: /node_modules/,
-        loaders: [
-          'html-loader',
-          {
-            loader: 'pug-html-loader',
-            options: {
-              exports: false
-            }
-          }
-        ]
-      }, {
-        test: /\.css$/,
-        loaders: ['style-loader', 'css-loader']
-      }
+
     ]
   },
   plugins: [
+
     new webpack.optimize.UglifyJsPlugin({
       minimize: true,
       mangle: true,
@@ -61,14 +37,9 @@ module.exports = {
 
     new HtmlWebpackPlugin({
       title: 'Angular2 Compilation',
-      template: 'src/index.html',
+      template: 'src/aot/index.html',
       chunksSortMode: 'dependency'
     }),
-
-    new webpack.ContextReplacementPlugin(
-      /angular(\\|\/)core(\\|\/)(esm(\\|\/)src|src)(\\|\/)linker/,
-      __dirname
-    ),
 
     new DashboardPlugin(dashboard.setData)
   ],
