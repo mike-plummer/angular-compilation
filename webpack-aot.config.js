@@ -9,20 +9,6 @@ module.exports = {
   entry: {
     app: './dist/app.js'
   },
-  output: {
-    filename: '[name].bundle.js',
-    sourceMapFilename: '[name].map',
-    chunkFilename: '[id].chunk.js'
-  },
-  // devtool: 'source-map',   // Uncomment to enable SourceMaps
-  resolve: {
-    extensions: ['.js']
-  },
-  module: {
-    rules: [
-
-    ]
-  },
   plugins: [
 
     new webpack.optimize.UglifyJsPlugin({

@@ -6,4 +6,4 @@ import { AppModuleNgFactory } from '../aot/src/app/app.module.ngfactory';
 
 console.log('Bootstrapping AOT version of application...');
 platformBrowser().bootstrapModuleFactory(AppModuleNgFactory);
-console.log('AOT boostrap complete.');
+console.log('AOT bootstrap complete.');
