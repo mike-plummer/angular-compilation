@@ -4,8 +4,8 @@
   "description": "Example of ahead-of-time compilation for Angular2",
   "main": "app.bundle.js",
   "scripts": {
-    "start": "webpack-dev-server --quiet",
-    "start:aot": "npm run ngc && npm run rollup && webpack-dev-server --quiet --compress --config webpack-aot.config.js",
+    "start": "webpack-dev-server",
+    "start:aot": "npm run ngc && npm run rollup && webpack-dev-server --config webpack-aot.config.js",
     "ngc": "node_modules/.bin/ngc -p tsconfig-aot.json",
     "rollup": "rollup -c rollup-config.js"
   },
@@ -33,6 +33,7 @@
   "devDependencies": {
     "@angular/compiler-cli": "2.4.8",
     "@angular/platform-server": "2.4.8",
+    "@types/core-js": "^0.9.35",
     "@types/node": "^7.0.5",
     "angular2-template-loader": "0.6.2",
     "awesome-typescript-loader": "3.0.7",
