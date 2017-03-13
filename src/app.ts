@@ -5,5 +5,5 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { AppModule } from './app/app.module';
 
 console.log('Bootstrapping dynamic version of application...');
-platformBrowserDynamic().bootstrapModule(AppModule);
-console.log('Dynamic bootstrap complete.');
+platformBrowserDynamic().bootstrapModule(AppModule)
+    .then(() => console.log('Dynamic bootstrap complete.'));

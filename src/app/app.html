@@ -1,9 +1,8 @@
-<div class="demo">
-  <div class="header">
-    <h1>Angular 2 Compilation</h1>
-  </div>
+<div>
+  <h1>Angular 2 Compilation</h1>
+
   <hr />
-  <div class="content">
-    <p>Still in work</p>
+  <div *ngFor="let value of settings | iterable" >
+    <setting [name]="value[0]" [enabled]="value[1]"></setting>
   </div>
 </div>
