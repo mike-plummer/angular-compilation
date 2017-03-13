@@ -13,4 +13,8 @@ export class SettingComponent {
     public enabled: boolean;
 
     constructor() {}
+
+    public toggle(): void {
+        this.enabled = !this.enabled;
+    }
 }
