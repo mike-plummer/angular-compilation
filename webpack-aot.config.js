@@ -1,5 +1,6 @@
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var BrotliPlugin = require('brotli-webpack-plugin');
 
 var Dashboard = require('webpack-dashboard');
 var DashboardPlugin = require('webpack-dashboard/plugin');
@@ -24,6 +25,11 @@ module.exports = {
       title: 'Angular2 Compilation',
       template: 'src/aot/index.html',
       chunksSortMode: 'dependency'
+    }),
+
+    new BrotliPlugin({
+      asset: '[path].br[query]',
+      minRatio: 1.0
     }),
 
     new DashboardPlugin(dashboard.setData)
