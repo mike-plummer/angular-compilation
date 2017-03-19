@@ -31,18 +31,6 @@ module.exports = {
         exclude: ['./src/index.html'],
         loader: 'html-loader'
       }, {
-        test: /\.(pug|jade)$/,
-        exclude: /node_modules/,
-        loaders: [
-          'html-loader',
-          {
-            loader: 'pug-html-loader',
-            options: {
-              exports: false
-            }
-          }
-        ]
-      }, {
         test: /\.css$/,
         loaders: ['style-loader', 'css-loader']
       }
