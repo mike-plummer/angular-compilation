@@ -17,6 +17,7 @@ module.exports = {
       comments: false,
       sourceMap: false,
       compress: {
+        screw_ie8: true,
         warnings: false
       }
     }),

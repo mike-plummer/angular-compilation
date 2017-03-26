@@ -1,4 +1,4 @@
-import 'zone.js/dist/zone';
+import 'zone.js';
 import 'reflect-metadata';
 
 import { platformBrowser } from '@angular/platform-browser';

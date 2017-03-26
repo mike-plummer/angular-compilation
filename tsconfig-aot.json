@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "ES5",
+    "target": "ES2015",
     "module": "ES2015",
     "moduleResolution": "node",
     "sourceMap": false,
@@ -9,7 +9,8 @@
     "noImplicitAny": true,
     "removeComments": true,
     "suppressImplicitAnyIndexErrors": true,
-    "outDir": "dist"
+    "outDir": "dist",
+    "types": []
   },
   "exclude": [
     "src/app.ts"

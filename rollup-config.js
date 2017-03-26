@@ -1,31 +1,29 @@
-import nodeResolve from 'rollup-plugin-node-resolve'
+import nodeResolve from '@oasisdigital/rollup-plugin-node-resolve'
 import commonjs from 'rollup-plugin-commonjs';
-import closure from 'rollup-plugin-closure-compiler-js';
+import buble from 'rollup-plugin-buble';
 
 export default {
   entry: 'dist/src/app-aot.js',
   dest: 'dist/app.js',
   sourceMap: false,
+  useStrict: false,
   format: 'iife',
   onwarn: ( warning, next ) => {
     if ( warning.code === 'THIS_IS_UNDEFINED' ) return;
     next( warning );
   },
   plugins: [
-    nodeResolve({ jsnext: true, module: true }),
+    // Using custom fork of rollup-plugin-node-resolve which adds custom 'es2015' field support that NG4 uses
+    nodeResolve({
+      es2015: true,
+      module: false,
+      browser: true
+    }),
     commonjs({
       include: 'node_modules/rxjs/**',
       sourceMap: false
     }),
-    closure({
-      /* Rollup wraps everyting in an IIFE */
-      assumeFunctionWrapper: true,
-      languageIn: 'ECMASCRIPT5',
-      /* Advanced would save us a *lot* of space but breaks Angular */
-      compilationLevel: 'SIMPLE',
-      rewritePolyfills: true,
-      useTypesForOptimization: true,
-      warningLevel: 'QUIET'
-    })
+    // This could be unwise as your app grows in complexity...
+    buble({ transforms: { dangerousForOf: true } })
   ]
 }
