@@ -7,3 +7,4 @@ node_modules/
 /dist/
 /typings/
 /npm-debug.log
+/rollup-stats.html

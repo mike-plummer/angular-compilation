@@ -1,12 +1,12 @@
 import nodeResolve from '@oasisdigital/rollup-plugin-node-resolve'
 import commonjs from 'rollup-plugin-commonjs';
 import buble from 'rollup-plugin-buble';
+import Visualizer from 'rollup-plugin-visualizer';
 
 export default {
   entry: 'dist/src/app-aot.js',
   dest: 'dist/app.js',
   sourceMap: false,
-  useStrict: false,
   format: 'iife',
   onwarn: ( warning, next ) => {
     if ( warning.code === 'THIS_IS_UNDEFINED' ) return;
@@ -24,6 +24,9 @@ export default {
       sourceMap: false
     }),
     // This could be unwise as your app grows in complexity...
-    buble({ transforms: { dangerousForOf: true } })
+    buble({ transforms: { dangerousForOf: true } }),
+    Visualizer({
+      filename: './rollup-stats.html'
+    })
   ]
 }
