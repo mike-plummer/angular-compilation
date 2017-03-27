@@ -1,0 +1,1 @@
+export { SettingsModule } from './superpowers.module';
