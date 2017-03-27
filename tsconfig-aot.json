@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "ES2015",
+    "target": "ES5",
     "module": "ES2015",
     "moduleResolution": "node",
     "sourceMap": false,
@@ -10,14 +10,12 @@
     "removeComments": true,
     "suppressImplicitAnyIndexErrors": true,
     "outDir": "dist",
-    "types": []
+    "noEmit": true,
+    "noEmitHelpers": true
   },
-  "exclude": [
-    "src/app.ts"
-  ],
   "include": [
-    "src/app/app.module.ts",
-    "src/app-aot.ts"
+    "src/**/*.module.ts",
+    "src/main-aot.ts"
   ],
   "angularCompilerOptions": {
     "genDir": "aot",

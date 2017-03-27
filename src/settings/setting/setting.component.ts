@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Setting } from './setting';
 
 @Component({
     selector: 'setting',
@@ -7,14 +8,11 @@ import { Component, Input } from '@angular/core';
 export class SettingComponent {
 
     @Input()
-    public name: string;
-
-    @Input()
-    public enabled: boolean;
+    public setting: Setting;
 
     constructor() {}
 
     public toggle(): void {
-        this.enabled = !this.enabled;
+        this.setting.enabled = !this.setting.enabled;
     }
 }

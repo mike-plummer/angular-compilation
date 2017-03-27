@@ -12,11 +12,11 @@
   },
   "exclude": [
     "node_modules",
-    "src/app-aot.ts"
+    "src/main-aot.ts"
   ],
-  "files": [
+  "include": [
     "src/app/app.module.ts",
-    "src/app.ts"
+    "src/main.ts"
   ],
   "compileOnSave": false,
   "buildOnSave": false
