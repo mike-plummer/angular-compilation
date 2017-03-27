@@ -1,8 +1,8 @@
 import { Routes } from '@angular/router';
 
 export const APP_ROUTES: Routes = [ {
-        path: 'settings',
-        loadChildren: '../settings/settings.module#SettingsModule'
+        path: 'superpowers',
+        loadChildren: '../superpowers/superpowers.module#SuperpowersModule'
     }, {
         path: 'history',
         loadChildren: '../history/history.module#HistoryModule'
