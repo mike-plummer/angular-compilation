@@ -1,8 +1,10 @@
-<div>
-  <h1>Angular 2 Compilation</h1>
+<h1>Superhero Dashboard</h1>
 
-  <hr />
-  <div *ngFor="let value of settings | iterable" >
-    <setting [name]="value[0]" [enabled]="value[1]"></setting>
-  </div>
-</div>
+<hr />
+<nav>
+  <button [routerLink]="['/']" routerLinkActive="active">Home</button>
+  <button [routerLink]="['/info']">Info</button>
+  <button [routerLink]="['/settings']">Settings</button>
+  <button [routerLink]="['/history']">History</button>
+</nav>
+<router-outlet></router-outlet>

@@ -7,7 +7,7 @@ var dashboard = new Dashboard();
 
 module.exports = {
   entry: {
-    app: './src/app.ts'
+    app: './src/main.ts'
   },
   output: {
     filename: '[name].bundle.js',
@@ -22,8 +22,9 @@ module.exports = {
       {
         test: /\.ts$/,
         loaders: [
+          'ng-router-loader',
           'awesome-typescript-loader',
-          'angular2-template-loader'
+          'angular2-template-loader',
           ]
       }, {
         test: /\.html$/,
@@ -49,7 +50,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: 'Angular2 Compilation',
       template: 'src/index.html',
-      chunksSortMode: 'dependency'
+      chunks: [ 'app' ]
     }),
 
     new webpack.ContextReplacementPlugin(

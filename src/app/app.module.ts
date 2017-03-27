@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
-import { IterablePipe } from './iterable.pipe';
-import { SettingComponent } from './setting/setting.component';
+import { APP_ROUTES } from './routes';
 
 @NgModule({
-    imports: [ BrowserModule ],
-    declarations: [ AppComponent, IterablePipe, SettingComponent ],
+    imports: [ BrowserModule, RouterModule.forRoot(APP_ROUTES) ],
+    declarations: [ AppComponent ],
     bootstrap: [ AppComponent ]
 })
 export class AppModule {
