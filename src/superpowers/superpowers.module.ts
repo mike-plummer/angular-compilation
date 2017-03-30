@@ -1,13 +1,24 @@
 import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { SuperpowerComponent } from './superpower/superpower.component';
-import { SUPERPOWERS_ROUTES } from './routes';
 import { CommonModule } from '@angular/common';
 import { SuperpowersComponent } from './superpowers.component';
+import { SegmentPipe } from './segment.pipe';
+
+const ROUTES: Routes = [{
+    path: '',
+    children: [ {
+        path: '',
+        component: SuperpowersComponent
+    }, {
+        path: ':id',
+        component: SuperpowerComponent
+    } ]
+}];
 
 @NgModule({
-    imports: [ CommonModule, RouterModule.forChild(SUPERPOWERS_ROUTES) ],
-    declarations: [ SuperpowersComponent, SuperpowerComponent ]
+    imports: [ CommonModule, RouterModule.forChild(ROUTES) ],
+    declarations: [ SuperpowersComponent, SuperpowerComponent, SegmentPipe ]
 })
 export class SuperpowersModule {
     constructor() {

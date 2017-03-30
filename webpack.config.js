@@ -1,9 +1,8 @@
-var webpack = require('webpack');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-
-var Dashboard = require('webpack-dashboard');
-var DashboardPlugin = require('webpack-dashboard/plugin');
-var dashboard = new Dashboard();
+const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const Dashboard = require('webpack-dashboard');
+const DashboardPlugin = require('webpack-dashboard/plugin');
+const dashboard = new Dashboard();
 
 module.exports = {
   entry: {
@@ -21,7 +20,7 @@ module.exports = {
     rules: [
       {
         test: /\.ts$/,
-        loaders: [
+        use: [
           'ng-router-loader',
           'awesome-typescript-loader',
           'angular2-template-loader',
@@ -29,10 +28,10 @@ module.exports = {
       }, {
         test: /\.html$/,
         exclude: ['./src/index.html'],
-        loader: 'html-loader'
+        use: [ 'html-loader' ]
       }, {
         test: /\.css$/,
-        loaders: ['style-loader', 'css-loader']
+        use: [ 'to-string-loader', 'css-loader' ]
       }
     ]
   },

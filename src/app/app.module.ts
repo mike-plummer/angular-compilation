@@ -1,8 +1,18 @@
 import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
-import { APP_ROUTES } from './routes';
+
+const APP_ROUTES: Routes = [ {
+    path: 'superpowers',
+    loadChildren: '../superpowers/superpowers.module#SuperpowersModule'
+}, {
+    path: 'history',
+    loadChildren: '../history/history.module#HistoryModule'
+}, {
+    path: 'info',
+    loadChildren: '../info/info.module#InfoModule'
+} ];
 
 @NgModule({
     imports: [ BrowserModule, RouterModule.forRoot(APP_ROUTES) ],

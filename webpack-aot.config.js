@@ -36,10 +36,24 @@ module.exports = {
       }, {
         test: /\.html$/,
         exclude: ['./src/index.html'],
-        use: ['html-loader']
+        use: [
+          {
+            loader:'html-loader',
+            options: {
+              minimize: true
+            }
+          }
+        ]
       }, {
         test: /\.css$/,
-        use: ['style-loader', 'css-loader']
+        use: [
+          {
+            loader: 'css-loader',
+            options: {
+              minimize: true
+            }
+          }
+        ]
       }
     ]
   },
@@ -58,13 +72,16 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: 'Angular2 Compilation',
       template: 'src/index.html',
-      chunks: [ 'app' ]
+      chunks: [ 'app' ],
+      minify: {
+        caseSensitive: true
+      }
     }),
 
-    new BrotliPlugin({
-      asset: '[path].br[query]',
-      minRatio: 1.0
-    }),
+    // new BrotliPlugin({
+    //   asset: '[path].br[query]',
+    //   minRatio: 1.0
+    // }),
 
     new DashboardPlugin(dashboard.setData)
   ],
