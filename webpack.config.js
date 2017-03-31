@@ -64,6 +64,7 @@ module.exports = {
     host: 'localhost',
     compress: true,
     quiet: true,
-    inline: false
+    inline: false,
+    historyApiFallback: true
   }
 };

@@ -11,3 +11,14 @@
 .column {
     flex-direction: column;
 }
+
+.active-route {
+    background: gray;
+}
+
+nav a {
+    border: solid black 2px;
+    border-radius: 6px;
+    padding: 5px;
+    background: white;
+}

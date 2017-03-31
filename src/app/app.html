@@ -2,9 +2,9 @@
 
 <hr />
 <nav>
-  <button [routerLink]="['/']" routerLinkActive="active">Home</button>
-  <button [routerLink]="['/info']">Info</button>
-  <button [routerLink]="['/superpowers']">Superpowers</button>
-  <button [routerLink]="['/history']">History</button>
+  <a [routerLink]="['/info']" routerLinkActive="active-route">Info</a>
+  <a [routerLink]="['/superpowers']" routerLinkActive="active-route">Superpowers</a>
+  <a [routerLink]="['/history']" routerLinkActive="active-route">History</a>
 </nav>
+<br />
 <router-outlet></router-outlet>

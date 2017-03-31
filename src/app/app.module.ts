@@ -12,6 +12,10 @@ const APP_ROUTES: Routes = [ {
 }, {
     path: 'info',
     loadChildren: '../info/info.module#InfoModule'
+}, {
+    path: '',
+    redirectTo: 'info',
+    pathMatch: 'full'
 } ];
 
 @NgModule({
