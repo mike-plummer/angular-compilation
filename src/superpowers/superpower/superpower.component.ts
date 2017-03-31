@@ -10,8 +10,6 @@ export class SuperpowerComponent {
     @Input()
     public superpower: Superpower;
 
-    constructor() {}
-
     public toggle(): void {
         this.superpower.enabled = !this.superpower.enabled;
     }

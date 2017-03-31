@@ -1,5 +1,3 @@
 <div class="column">
-  <div class="row" *ngFor="let segment of superpowers | segment">
-    <superpower *ngFor="let superpower of segment" [superpower]="superpower"></superpower>
-  </div>
+  <superpower *ngFor="let superpower of superpowers" [superpower]="superpower"></superpower>
 </div>

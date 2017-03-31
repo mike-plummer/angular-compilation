@@ -3,7 +3,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { SuperpowerComponent } from './superpower/superpower.component';
 import { CommonModule } from '@angular/common';
 import { SuperpowersComponent } from './superpowers.component';
-import { SegmentPipe } from './segment.pipe';
 
 const ROUTES: Routes = [{
     path: '',
@@ -18,7 +17,7 @@ const ROUTES: Routes = [{
 
 @NgModule({
     imports: [ CommonModule, RouterModule.forChild(ROUTES) ],
-    declarations: [ SuperpowersComponent, SuperpowerComponent, SegmentPipe ]
+    declarations: [ SuperpowersComponent, SuperpowerComponent ]
 })
 export class SuperpowersModule {
     constructor() {

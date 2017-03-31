@@ -1,6 +1,7 @@
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const BrotliPlugin = require('brotli-webpack-plugin');
+const RemoveAssetsPlugin = require('remove-assets-webpack-plugin');
 
 const Dashboard = require('webpack-dashboard');
 const DashboardPlugin = require('webpack-dashboard/plugin');
@@ -21,6 +22,15 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.html$/,
+        exclude: /index\.html$/,
+        loader: 'ignore-loader'
+      },
+      {
+        test: /\.css$/,
+        loader: 'ignore-loader'
+      },
+      {
         test: /\.ts$/,
         use: [
           {
@@ -30,34 +40,13 @@ module.exports = {
               genDir: 'aot'
             }
           },
-          'awesome-typescript-loader',
-          'angular2-template-loader',
-        ]
-      }, {
-        test: /\.html$/,
-        exclude: ['./src/index.html'],
-        use: [
-          {
-            loader:'html-loader',
-            options: {
-              minimize: true
-            }
-          }
-        ]
-      }, {
-        test: /\.css$/,
-        use: [
-          {
-            loader: 'css-loader',
-            options: {
-              minimize: true
-            }
-          }
+          'awesome-typescript-loader'
         ]
       }
     ]
   },
   plugins: [
+    new DashboardPlugin(dashboard.setData),
 
     new webpack.optimize.UglifyJsPlugin({
       mangle: true,
@@ -69,6 +58,13 @@ module.exports = {
       }
     }),
 
+    // new BrotliPlugin({
+    //   asset: '[path].br[query]',
+    //   minRatio: 1.0
+    // }),
+    //
+    // new RemoveAssetsPlugin(/\.js$/),
+
     new HtmlWebpackPlugin({
       title: 'Angular2 Compilation',
       template: 'src/index.html',
@@ -76,14 +72,7 @@ module.exports = {
       minify: {
         caseSensitive: true
       }
-    }),
-
-    // new BrotliPlugin({
-    //   asset: '[path].br[query]',
-    //   minRatio: 1.0
-    // }),
-
-    new DashboardPlugin(dashboard.setData)
+    })
   ],
   devServer: {
     port: 8000,

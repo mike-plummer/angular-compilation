@@ -20,7 +20,7 @@ module.exports = {
     rules: [
       {
         test: /\.ts$/,
-        use: [
+        loaders: [
           'ng-router-loader',
           'awesome-typescript-loader',
           'angular2-template-loader',
@@ -28,10 +28,10 @@ module.exports = {
       }, {
         test: /\.html$/,
         exclude: ['./src/index.html'],
-        use: [ 'html-loader' ]
+        loader: 'html-loader'
       }, {
         test: /\.css$/,
-        use: [ 'to-string-loader', 'css-loader' ]
+        loaders: [ 'to-string-loader', 'css-loader' ]
       }
     ]
   },

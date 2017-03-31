@@ -10,5 +10,4 @@ export class HistoryEntryComponent {
     @Input()
     public entry: HistoryEntry;
 
-    constructor() {}
 }

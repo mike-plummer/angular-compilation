@@ -16,6 +16,11 @@
     background: gray;
 }
 
+.full-size {
+    height:100%;
+    width:100%;
+}
+
 nav a {
     border: solid black 2px;
     border-radius: 6px;
