@@ -18,15 +18,24 @@ These are the most common issues:
 Each of these is shown off in this application:
 
 * Pre-compile with Angular's NGC AOT compiler
- Now we don't have to deliver the @angular/compiler to the client
+
+  Now we don't have to deliver the @angular/compiler to the client
+ 
 * Strip out use of 'one-off' libraries and CSS libs
- By avoiding large libraries and instead just writing what we need (assuming it's simple) we can reduce the total code in play
+
+  By avoiding large libraries and instead just writing what we need (assuming it's simple) we can reduce the total code in play
+ 
 * Avoid overly-broad imports, ensure targeting libraries with correct module imports
- Libraries like Lodash are notorious for pulling in the entire library unless you specially-craft your imports
+
+  Libraries like Lodash are notorious for pulling in the entire library unless you specially-craft your imports
+ 
 * Use a modern bundler, minify and uglify
+
   Rollup and Webpack 2 are capable of dropping (some) dead code
+  
 * At a minimum enable GZIP on your server
- Even better, conditionally provide optimized bundles using newer algorithms like Brotli to browsers that support them
+
+  Even better, conditionally provide optimized bundles using newer algorithms like Brotli to browsers that support them
 
 ## Requirements
 - Node & NPM (tested with Node v7.8.0, NPM v4.2.0)
