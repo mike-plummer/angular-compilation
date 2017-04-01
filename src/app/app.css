@@ -1,3 +1,10 @@
+body {
+    font-family: sans-serif;
+}
+
+h1, h2, h3, .btn {
+    font-variant: small-caps;
+}
 
 .row, .column {
     display: flex;
@@ -12,18 +19,30 @@
     flex-direction: column;
 }
 
-.active-route {
-    background: gray;
+.btn {
+    margin: 0 .5rem;
+    padding: .5rem;
+    border: 2px solid #ccc;
+    text-align: center;
+    background: 0 0;
+    border-radius: 3px;
+    cursor: pointer;
 }
 
-.full-size {
-    height:100%;
-    width:100%;
+.btn.active {
+    border-color: #2d94da;
+    background-color: #3498db;
+    color: #fff;
 }
 
-nav a {
-    border: solid black 2px;
-    border-radius: 6px;
-    padding: 5px;
-    background: white;
+.no-margin {
+    margin: 0;
+}
+
+.spacer {
+    flex-grow: 100;
+}
+
+header {
+    background-color: rgba(10,10,10,.20);
 }

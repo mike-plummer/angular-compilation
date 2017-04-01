@@ -3,7 +3,8 @@ import { HistoryEntry } from './historyEntry';
 
 @Component({
     selector: 'historyEntry',
-    templateUrl: './historyEntry.html'
+    templateUrl: './historyEntry.html',
+    styleUrls: [ './historyEntry.css' ]
 })
 export class HistoryEntryComponent {
 

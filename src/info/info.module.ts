@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { InfoComponent } from './info.component';
+import { NameGenerator } from './nameGenerator.service';
+import { CommonModule } from '@angular/common';
 
 const ROUTES: Routes = [ {
     path: '',
@@ -11,10 +13,8 @@ const ROUTES: Routes = [ {
 }];
 
 @NgModule({
-    imports: [ RouterModule.forChild(ROUTES) ],
-    declarations: [ InfoComponent ]
+    imports: [ CommonModule, RouterModule.forChild(ROUTES) ],
+    declarations: [ InfoComponent ],
+    providers: [ NameGenerator ]
 })
-export class InfoModule {
-    constructor() {
-    }
-}
+export class InfoModule { }

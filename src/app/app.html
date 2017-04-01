@@ -1,10 +1,13 @@
-<h1>Superhero Dashboard</h1>
+<header class="row">
+  <h1 class="no-margin">Superhero Dashboard</h1>
 
-<hr />
-<nav>
-  <a [routerLink]="['/info']" routerLinkActive="active-route">Info</a>
-  <a [routerLink]="['/superpowers']" routerLinkActive="active-route">Superpowers</a>
-  <a [routerLink]="['/history']" routerLinkActive="active-route">History</a>
-</nav>
-<br />
-<router-outlet class="full-size"></router-outlet>
+  <span class="spacer"></span>
+
+  <nav class="row no-margin">
+    <div class="btn" [routerLink]="['/info']" routerLinkActive="active">Info</div>
+    <div class="btn" [routerLink]="['/superpowers']" routerLinkActive="active">Superpowers</div>
+    <div class="btn" [routerLink]="['/history']" routerLinkActive="active">History</div>
+  </nav>
+</header>
+
+<router-outlet></router-outlet>

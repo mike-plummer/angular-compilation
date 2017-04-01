@@ -23,7 +23,4 @@ const APP_ROUTES: Routes = [ {
     declarations: [ AppComponent ],
     bootstrap: [ AppComponent ]
 })
-export class AppModule {
-    constructor() {
-    }
-}
+export class AppModule { }

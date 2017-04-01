@@ -3,7 +3,8 @@ import { Superpower } from './superpower';
 
 @Component({
     selector: 'superpower',
-    templateUrl: './superpower.html'
+    templateUrl: './superpower.html',
+    styleUrls: [ './superpower.css' ]
 })
 export class SuperpowerComponent {
 

@@ -6,8 +6,4 @@ import { Component, ViewEncapsulation } from '@angular/core';
     styleUrls: [ './app.css' ],
     encapsulation: ViewEncapsulation.None
 })
-export class AppComponent {
-
-    constructor() {
-    }
-}
+export class AppComponent { }

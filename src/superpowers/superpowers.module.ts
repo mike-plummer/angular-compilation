@@ -19,7 +19,4 @@ const ROUTES: Routes = [{
     imports: [ CommonModule, RouterModule.forChild(ROUTES) ],
     declarations: [ SuperpowersComponent, SuperpowerComponent ]
 })
-export class SuperpowersModule {
-    constructor() {
-    }
-}
+export class SuperpowersModule { }
