@@ -2,6 +2,7 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const BrotliPlugin = require('brotli-webpack-plugin');
 const RemoveAssetsPlugin = require('remove-assets-webpack-plugin');
+const ClosureCompilerPlugin = require('webpack-closure-compiler');
 
 const Dashboard = require('webpack-dashboard');
 const DashboardPlugin = require('webpack-dashboard/plugin');
@@ -47,6 +48,16 @@ module.exports = {
   },
   plugins: [
     new DashboardPlugin(dashboard.setData),
+
+    new ClosureCompilerPlugin({
+      compiler: {
+        language_in: 'ECMASCRIPT5',
+        language_out: 'ECMASCRIPT5',
+        compilation_level: 'SIMPLE'
+      },
+
+      concurrency: 3
+    }),
 
     new webpack.optimize.UglifyJsPlugin({
       mangle: true,
