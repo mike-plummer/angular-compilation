@@ -9,9 +9,6 @@ const ROUTES: Routes = [{
     children: [ {
         path: '',
         component: SuperpowersComponent
-    }, {
-        path: ':id',
-        component: SuperpowerComponent
     } ]
 }];
 

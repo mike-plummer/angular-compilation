@@ -1,3 +1,15 @@
-<div *ngFor="let entry of historyEntries" >
-  <historyEntry [entry]="entry"></historyEntry>
+<div>
+  <h2>History</h2>
+  <p>Note from lawyers: Entries in this log should not be construed as an admission of guilt</p>
+
+  <table>
+    <tr>
+      <th (click)="sortByDate()">Date</th>
+      <th (click)="sortByDescription()">Event</th>
+    </tr>
+    <tr *ngFor="let entry of historyEntries">
+      <td>{{ entry.dttm | date:'mediumDate' }}</td>
+      <td>{{ entry.description }}</td>
+    </tr>
+  </table>
 </div>

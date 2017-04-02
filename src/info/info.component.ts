@@ -1,5 +1,5 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { NameGenerator } from './nameGenerator.service';
+import { DataGenerator } from './dataGenerator.service';
 
 @Component({
     selector: 'info',
@@ -10,12 +10,17 @@ export class InfoComponent implements OnInit {
 
     public name: string;
     public sidekick: string;
-    public days: number = Math.random() * 30;
+    public days: number;
+    public vulnerability: string;
 
-    constructor(@Inject(NameGenerator) private nameGenerator: NameGenerator) { }
+    constructor(@Inject(DataGenerator) private dataGenerator: DataGenerator) {
+
+    }
 
     ngOnInit(): void {
-        this.name = this.nameGenerator.buildName();
-        this.sidekick = this.nameGenerator.buildSidekick();
+        this.name = this.dataGenerator.generateName();
+        this.sidekick = this.dataGenerator.generateSidekick();
+        this.days = Math.random() * 30;
+        this.vulnerability = this.dataGenerator.generateVulnerability();
     }
 }
